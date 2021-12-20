@@ -1,0 +1,891 @@
+/**
+ * Eksamen: Urtekram fettuccine
+ **/
+
+ /* Adobe fonts */
+ @import url("https://use.typekit.net/iet2zpy.css");
+ /* font-family: 'rig-shaded-medium-face', sans-serif; font-weight: 500; font-style: normal; */
+ @import url("https://use.typekit.net/iet2zpy.css");
+ /* font-family: 'franklin-gothic-urw', sans-serif; font-weight: 300; font-style: normal; */
+
+ /* Variabler*/
+ :root {
+   /* farver */
+   --white: #fcfcfc;
+   --offwhite: #f8f4f1;
+   --black: #1d0b09;
+   --blue: #b0e3ff;
+   --brown: #c9b79d;
+   --darkred: #9c2f11;
+   --green: #335c37;
+
+   /* fonte */
+   --overskrift: 'rig-shaded-medium-face', sans-serif; /* overskrifter */
+   --brødtekst: 'franklin-gothic-urw', sans-serif; /* brødtekst */
+
+   /* whitespace */
+   --whitespace: .5rem;
+
+   /* teksturer ("fliselagte baggrunde") */
+   --opskrift: url('../images/Carbonara2.jpg');
+   --pasta: url('../images/sortiment.png');
+   --familie: url('../images/felicetti.png');
+
+}
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+   /* Smooth scroll */
+   html {
+     scroll-behavior: smooth;
+   }
+
+   /* Wrap */
+   #wrap {
+     min-height: 100vh;
+     margin: auto;
+   }
+
+  body {
+   background-color: var(--brown);
+   }
+
+   /* Typography */
+   h1 {
+     font-family: var(--overskrift);
+     color: var(--darkred);
+     margin-top: var(--whitespace);
+     margin-bottom: var(--whitespace);
+     text-align: center;
+     font-size: 25px;
+
+   }
+
+   h2 {
+     font-family: var(--overskrift);
+     color: var(--offwhite);
+     margin-top: var(--whitespace);
+     margin-bottom: var(--whitespace);
+     padding-left: 50px;
+     padding-right: 50px;
+     text-align: center;
+   }
+
+   h3 {
+     font-family: var(--brødtekst);
+      color: var(--offwhite);
+      margin-top: var(--whitespace);
+      margin-bottom: var(--whitespace);
+      text-align: center;
+      padding-left: 50px;
+      padding-right: 50px;
+   }
+
+   p {
+     font-family: var(--brødtekst);
+     color: var(--darkred);
+     margin-top: var(--whitespace);
+     margin-bottom: var(--whitespace);
+     text-align: center;
+     font-size: 25px;
+     display: block;
+     margin-top: 1em;
+     margin-bottom: 1em;
+     margin-left: 1em;
+     margin-right: 1em;
+   }
+
+   /* MENUBAR */
+   #navigation {
+       display: flex;
+       align-items: center;
+       justify-content: space-evenly;
+       height: 100px;
+       width: 100%;
+       background-color: var(--brown);
+       color: var(--darkred);
+   }
+
+   /* Dropdown Button - https://www.w3schools.com/howto/howto_css_dropdown.asp */
+   .dropbtn {
+     color: var(--darkred);
+     padding-bottom: 16px;
+     padding-top: 16px;
+     font-family: var(--brødtekst);
+     font-size: 160%;
+     text-decoration: none;
+   }
+
+   /* The container <div> - needed to position the dropdown content */
+   .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+
+   /* Dropdown Content (Hidden by Default) */
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: var(--brown);
+     min-width: 160px;
+     z-index: 1;
+     margin-top: 16px;
+   }
+
+   /* Links inside the dropdown */
+   .dropdown-content a {
+     color: var(--darkred);
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     font-family: var(--brødtekst);
+     font-size: 160%;
+   }
+
+   /* Change color of dropdown links on hover */
+   .dropdown-content a:hover {
+     background-color: var(--brown);
+     color: var(--white);
+   }
+
+   /* Show the dropdown menu on hover */
+   .dropdown:hover .dropdown-content {
+     display: block;
+   }
+
+   /* Change the background color of the dropdown button when the dropdown content is shown */
+   .dropdown:hover .dropbtn {
+     background-color: var(--off-white)
+   }
+
+   .dropbtn:hover {
+     color: var(--offwhite);
+     cursor: pointer;
+   }
+
+   /* BURGERMENU */
+    nav a {
+     color: var(--black);
+     text-decoration: none;
+   }
+   /* MENUBAR */
+   #navigationburger {
+       display: flex;
+       justify-content: space-evenly;
+       flex-direction: column;
+       align-items: center;
+       margin-top: 170px;
+       width: 100%;
+       color: var(--black);
+   }
+
+   /* Dropdown Button - https://www.w3schools.com/howto/howto_css_dropdown.asp */
+   .btnburger {
+     color: var(--darkred);
+     font-family: var(--overskrift);
+     font-size: 170%;
+     text-decoration: none;
+   }
+
+   /* Dropdown Button - https://www.w3schools.com/howto/howto_css_dropdown.asp */
+   .btnburger2 {
+     color: var(--darkred);
+     font-family: var(--brødtekst);
+     font-size: 150%;
+     text-decoration: none;
+   }
+
+   /* The container <div> - needed to position the dropdown content */
+   .navburger {
+     padding: 20px;
+   }
+
+   /* FORSIDE - header */
+   .headerforside {
+     position: relative;
+     width: 100%;
+     background: var(--brown);
+     padding-bottom: 5%;
+     color: var(--blue);
+   }
+
+   .headerforside img {
+     margin-bottom: 5%;
+   }
+
+   .headerforside h1 {
+     padding-left: 50px;
+     padding-right: 50px;
+     text-align: center;
+   }
+
+ /* FORSIDE - artikler */
+ /* flexbox til artikler  */
+ /* butikflex til forside  */
+ .butikflex{
+   display: flex;
+     background-color: var(--brown);
+     justify-content: space-around;
+ }
+
+
+ .flexbox-container {
+   display: flex;
+ }
+
+
+ /* artikel til forside */
+ .artikel{
+   margin: 40px;
+   padding-top: 15px;
+   padding-bottom: 30px;
+   background-color: var(--green);
+   text-align: center;
+   width: 300px;
+ }
+
+ .center {
+   margin-left: auto;
+   margin-right: auto;
+   width: 80%;
+ }
+
+  .opskriftguide{
+    padding-top: 0.5%;
+    margin-top: 25px;
+
+}
+
+  /* UNDERSIDE - OPSKRIFT - historien om carbonara */
+  .teori{
+    background-color: var(--green);
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+       /*UNDERSIDE pasta*/
+       .row2{
+         flex-direction: column;
+         display: flex;
+       }
+
+       .pastap{
+         font-family: var(--brødtekst);
+         color: var(--darkred);
+         margin-top: var(--whitespace);
+         margin-bottom: var(--whitespace);
+         text-align: center;
+         font-size: 20px;
+         display: block;
+         margin-top: 1em;
+         margin-bottom: 1em;
+         margin-left: 1em;
+         margin-right: 1em;
+       }
+
+        /* boks til pasta - centreret */
+        .pastaartikel{
+          padding-top: 15px;
+          padding-bottom: 30px;
+          background-color: var(--green);
+          text-align: center;
+          width: 370px;
+        }
+
+/*UNDERSIDE opskrift*/
+/*bokse til opskrift og billeder*/
+        .opskriftartikel{
+          color: var(--offwhite);
+          background-color: var(--green);
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 40px;
+          margin-top: 40px;
+          margin-bottom: 40px;
+        }
+
+   /* FOOTER */
+   #copyright {
+     font-size: 15px;
+     text-align: center;
+     color: var(--black);
+   }
+
+   .copyright {
+     background-color: var(--white);
+     padding: 1em;
+   }
+
+   .footer{
+   background-color: var(--brown);
+   font-family: var(--brødtekst);
+   font-size: 20px;
+   text-align: center;
+   color: var(--darkred);
+   padding-top: 10px;
+   padding-bottom: 50px;
+   }
+
+   /* sociale medie ikoner til footer*/
+   .ikoner {
+   display: flex;
+   padding-top: 10px;
+   justify-content: center;
+   margin-left: auto;
+   margin-right: auto;
+   }
+
+
+   /* Extra small devices (phones, 600px and down) */
+   @media only screen and (max-width: 600px) {
+     /* Typography */
+     .headerforside h1 {
+       font-size: 1.4em;
+     }
+     .headerforside p {
+       font-size: 1.4em;
+     }
+     /* navbar burgermenu ved lille skærm */
+     .burgermenu{
+       position: absolute;
+       top: 1.5rem;
+       right: 1.5rem;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+     }
+
+     .burgermenu .bar{
+       height: 3px;
+       width: 100%;
+       background-color: var(--brown);
+       border-radius: 10px;
+     }
+
+     .dropdown{
+       display: none;
+     }
+
+
+     .btn1web {
+      display: none;
+   }
+
+     .btn2web {
+      display: none;
+   }
+
+     .btn3web {
+      display: none;
+   }
+
+     .btn4web {
+       display: none;
+   }
+
+     .btn5web {
+       display: none;
+   }
+
+     .btn6web {
+       display: none;
+     }
+
+    /*FORSIDE*/
+   /* flexbox ved mobilvisning*/
+   /*https://css-tricks.com/snippets/css/a-guide-to-flexbox*/
+     .butikflex{
+        flex-direction: column;
+     }
+
+     /*fjern opskriftsguide billede til storskærm*/
+       .inspirationweb{
+          display: none;
+       }
+
+
+
+     /*  Knapper til opskriftguide ved mobilvisning */
+     /*med transparency - https://www.w3schools.com/css/css_image_transparency.asp*/
+      .btn1 {
+        position: absolute;
+        top: 355%; /* MOBIL */
+        left: 50%; /* MOBIL */
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: var(--darkred);
+        color: var(--white);
+        font-family: var(--overskrift);
+        font-size: 18px; /* MOBIL */
+        padding: 12px 35px;
+        padding-top: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 60px;
+        text-align: center;
+        opacity: 0.5;
+     }
+
+      .btn2 {
+        position: absolute;
+        top: 365%; /* MOBIL */
+        left: 50%; /* MOBIL */
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: var(--darkred);
+        color: var(--white);
+        font-family: var(--overskrift);
+        font-size: 18px; /* MOBIL */
+        padding: 12px 30px;
+        padding-top: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 60px;
+        text-align: center;
+        opacity: 0.5;
+     }
+
+     .btn3 {
+      position: absolute;
+      top: 375%; /* MOBIL */
+      left: 50%; /* MOBIL */
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: var(--darkred);
+      color: var(--white);
+      font-family: var(--overskrift);
+      font-size: 18px; /* MOBIL */
+      padding: 12px 30px;
+      padding-top: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 60px;
+      text-align: center;
+      opacity: 0.5;
+     }
+
+     .btn4 {
+      position: absolute;
+      top: 385%; /* MOBIL */
+      left: 50%; /* MOBIL */
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: var(--darkred);
+      color: var(--white);
+      font-family: var(--overskrift);
+      font-size: 18px; /* MOBIL */
+      padding: 12px 40px;
+      padding-top: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 60px;
+      text-align: center;
+      opacity: 0.5;
+     }
+
+     .btn5 {
+      position: absolute;
+      top: 395%; /* MOBIL */
+      left: 50%; /* MOBIL */
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: var(--darkred);
+      color: var(--white);
+      font-family: var(--overskrift);
+      font-size: 18px; /* MOBIL */
+      padding: 12px 40px;
+      padding-top: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 60px;
+      text-align: center;
+      opacity: 0.5;
+     }
+
+     .btn6 {
+      position: absolute;
+      top: 405%; /* MOBIL */
+      left: 50%; /* MOBIL */
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: var(--darkred);
+      color: var(--white);
+      font-family: var(--overskrift);
+      font-size: 18px; /* MOBIL */
+      padding: 12px 40px;
+      padding-top: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 60px;
+      text-align: center;
+      opacity: 0.5;
+     }
+
+/*fjern knapper til web*/
+     .btnweb1 {
+      display: none;
+   }
+
+     .btnweb2 {
+      display: none;
+   }
+
+     .btnweb3 {
+      display: none;
+   }
+
+     .btn4web {
+       display: none;
+   }
+
+     .btn5web {
+       display: none;
+   }
+
+     .btn6web {
+       display: none;
+     }
+
+     /*UNDERSIDE felicetti*/
+     /*centrer billede*/
+     .dolomitterne{
+       width: 100%;
+       margin-left: 40px;
+     }
+
+     /* FOOTER */
+     /* fjern footeren til de store devices*/
+     .row{
+     display: none;
+     }
+
+     .behandlinger{
+       display: none;
+     }
+   }
+
+
+   /* Small devices (portrait tablets and large phones, 600px and up) */
+   @media only screen and (min-width: 600px) {
+     /* navbar burgermenu */
+       .burgermenu{
+         display:none;
+       }
+
+       /* FOOTER */
+      /* fjern web footer*/
+      .row{
+        display: none;
+      }
+     }
+
+
+     /* Medium devices (landscape tablets, 768px and up) */
+     @media only screen and (min-width: 768px) {
+       /* navbar burgermenu */
+         .burgermenu{
+           display:none;
+         }
+
+         /* FOOTER */
+        /* kolonner til footer på computer */
+            .row{
+              display: flex;
+              width: 100%;
+            }
+            .column {
+              width: 50%;
+              background-color: var(--brown);
+              font-family: var(--brødtekst);
+              font-size: 15px;
+              text-align: center;
+              color: var(--darkred);
+            }
+
+            /* flexbox ved mobilvisning*/
+              .butikflex{
+                 flex-direction: row;
+              }
+
+                   /*  Knapper til opskriftguide ved visning på store devices */
+                   /*med transparency - https://www.w3schools.com/css/css_image_transparency.asp*/
+                    .btnweb1 {
+                      position: absolute;
+                      top: 310%; /* WEB */
+                      left: 30%; /* WEB */
+                      transform: translate(-50%, -50%);
+                      -ms-transform: translate(-50%, -50%);
+                      background-color: var(--darkred);
+                      color: var(--white);
+                      font-family: var(--overskrift);
+                      font-size: 18px; /* MOBIL */
+                      padding: 12px 35px;
+                      padding-top: 16px;
+                      border: none;
+                      cursor: pointer;
+                      border-radius: 60px;
+                      text-align: center;
+                      opacity: 0.5;
+                   }
+
+                    .btnweb2 {
+                      position: absolute;
+                      top: 310%; /* MOBIL */
+                      left: 50%; /* MOBIL */
+                      transform: translate(-50%, -50%);
+                      -ms-transform: translate(-50%, -50%);
+                      background-color: var(--darkred);
+                      color: var(--white);
+                      font-family: var(--overskrift);
+                      font-size: 18px; /* MOBIL */
+                      padding: 12px 30px;
+                      padding-top: 16px;
+                      border: none;
+                      cursor: pointer;
+                      border-radius: 60px;
+                      text-align: center;
+                      opacity: 0.5;
+                   }
+
+                   .btnweb3 {
+                    position: absolute;
+                    top: 310%; /* MOBIL */
+                    left: 75%; /* MOBIL */
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    background-color: var(--darkred);
+                    color: var(--white);
+                    font-family: var(--overskrift);
+                    font-size: 18px; /* MOBIL */
+                    padding: 12px 30px;
+                    padding-top: 16px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 60px;
+                    text-align: center;
+                    opacity: 0.5;
+                   }
+
+                   .btn4web {
+                    position: absolute;
+                    top: 330%; /* MOBIL */
+                    left: 30%; /* MOBIL */
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    background-color: var(--darkred);
+                    color: var(--white);
+                    font-family: var(--overskrift);
+                    font-size: 18px; /* MOBIL */
+                    padding: 12px 40px;
+                    padding-top: 16px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 60px;
+                    text-align: center;
+                    opacity: 0.5;
+                   }
+
+                   .btn5web {
+                    position: absolute;
+                    top: 330%; /* MOBIL */
+                    left: 50%; /* MOBIL */
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    background-color: var(--darkred);
+                    color: var(--white);
+                    font-family: var(--overskrift);
+                    font-size: 18px; /* MOBIL */
+                    padding: 12px 40px;
+                    padding-top: 16px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 60px;
+                    text-align: center;
+                    opacity: 0.5;
+                   }
+
+                   .btn6web {
+                    position: absolute;
+                    top: 330%; /* MOBIL */
+                    left: 75%; /* MOBIL */
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    background-color: var(--darkred);
+                    color: var(--white);
+                    font-family: var(--overskrift);
+                    font-size: 18px; /* MOBIL */
+                    padding: 12px 40px;
+                    padding-top: 16px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 60px;
+                    text-align: center;
+                    opacity: 0.5;
+                   }
+
+
+                   /* fjern knapper til opskriftguide ved mobil */
+
+                     .btn1 {
+                      display: none;
+                   }
+
+                     .btn2 {
+                      display: none;
+                   }
+
+                     .btn3 {
+                      display: none;
+                   }
+
+                     .btn4 {
+                       display: none;
+                   }
+
+                     .btn5 {
+                       display: none;
+                   }
+
+                     .btn6 {
+                       display: none;
+                     }
+
+       /*UNDERSIDE - PASTA*/
+       /*Linje vertikalt*/
+       /*https://www.geeksforgeeks.org/how-to-make-a-vertical-line-using-html/*/
+        .vertical {
+          border-left: 5px solid var(--darkred);
+          height: 1710px;
+          position:absolute;
+          left: 50%;
+          }
+
+/*UNDERSIDE PASTA*/
+/*pasta kolonner flex*/
+       .pasta{
+         display: flex;
+       }
+
+      .pasta2{
+        display: flex;
+      }
+/*centrer billede ved store devices*/
+    .pastaartikel{
+      margin-left: 200px;
+     }
+
+/*FORSIDE produkt i koloner*/
+      .produkt{
+        display: flex;
+        text-align: center;
+      }
+
+
+/*UNDERSIDE opskrift*/
+      .opskriftartikel{
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 600px;
+        margin: 70px;
+      }
+      .opskrift{
+        display: flex;
+        padding-bottom: 40px;
+      }
+
+      .opskrift2{
+        display: flex;
+      }
+/*UNDERSIDE felicetti familien*/
+      .historie{
+        display: flex;
+      }
+
+      /*UNDERSIDE felicetti*/
+      /*centrer billede*/
+      .dolomitterne{
+        width: 100%;
+        margin-left: 100px;
+      }
+
+        /* fjern visning af den mobile footer*/
+            .footer{
+              display: none;
+            }
+       }
+
+     /* Large devices (laptops/desktops, 992px and up) */
+       @media only screen and (min-width: 992px) {
+         /* navbar burgermenu */
+           .burgermenu{
+             display:none;
+           }
+
+           /* fjern knapper til opskriftguide ved mobil */
+
+             .btn1 {
+              display: none;
+           }
+
+             .btn2 {
+              display: none;
+           }
+
+             .btn3 {
+              display: none;
+           }
+
+             .btn4 {
+               display: none;
+           }
+
+             .btn5 {
+               display: none;
+           }
+
+             .btn6 {
+               display: none;
+             }
+
+       /*fjern opskriftsguide billede til små devices*/
+          .inspiration{
+                display: none;
+               }
+
+
+          /* fjern visning af den mobile footer*/
+              .footer{
+                display: none;
+              }
+
+              /* FOOTER */
+             /* kolonner til footer på computer */
+                 .row{
+                   display: flex;
+                   width: 100%;
+                 }
+                 .column {
+                   width: 50%;
+                   background-color: var(--brown);
+                   font-family: var(--brødtekst);
+                   font-size: 20px;
+                   text-align: center;
+                   color: var(--darkred);
+                 }
+         }
+
+     /* Extra large devices (large laptops and desktops, 1200px and up) */
+     @media only screen and (min-width: 1200px) {
+
+
+         /* navbar burgermenu */
+             .burgermenu{
+               display:none;
+             }
+          }
